@@ -57,7 +57,8 @@ def main():
                 return
         
         if kk_rect.colliderect(rb_rect):
-            screen.blit(moji, [WIDTH/2, HEIGHT/2])
+            screen.blit(moji, [WIDTH/2, HEIGHT/2]) 
+            #追加機能5 こうかとんと爆弾が接触したらFinishと出る
             pg.display.update()
             print("ゲームオーバー")
             time.sleep(2)
