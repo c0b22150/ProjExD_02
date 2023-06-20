@@ -1,6 +1,7 @@
 import random
 import sys
 import pygame as pg
+import time
 
 
 WIDTH, HEIGHT = 1600, 900
@@ -46,13 +47,20 @@ def main():
     vx, vy = +5, +5
     clock = pg.time.Clock()
     tmr = 0
+
+    font = pg.font.Font(None, 80)
+    moji = font.render("Finish!!", True, (0, 0, 255))
+
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: 
                 return
         
         if kk_rect.colliderect(rb_rect):
+            screen.blit(moji, [WIDTH/2, HEIGHT/2])
+            pg.display.update()
             print("ゲームオーバー")
+            time.sleep(2)
             return 
         key_list = pg.key.get_pressed()
         sum_mv = [0, 0]
